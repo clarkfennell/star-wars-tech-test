@@ -4,7 +4,7 @@ const App = () => {
   const [people, setPeople] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch('https://swapi.dev/api/people/');
+    const response = await fetch(`https://swapi.dev/api/people/`);
     if (!response.ok) {
       throw new Error('Data could not be fetched!');
     } else {
@@ -22,12 +22,12 @@ const App = () => {
       })
   }, [])
 
-  console.log(people);
+  console.log(people)
 
   return (
     <div className="App">
-      {people.results.map((person) => (
-        <p>{ person.name }</p>
+      {people.results.map((person, index) => (
+        <p key={index}>{ person.name }</p>
       ))}
     </div>
   );
