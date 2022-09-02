@@ -19,3 +19,9 @@ _You should use the People endpoint from the Star Wars API (https://swapi.dev/ap
 ###### _Optional:_ ######
 - [ ] Build the application so that a user can access the page number through a parameter on the url: e.g. <domain>/14 would load the application with page 14 (if it exists)
 Please complete the task using React and/or NextJS
+
+
+###### _Personal Additions Once Task Are Complete_ ######
+- [ ] CSS styling (preferably with Sass)
+- [ ] Transition styling
+- [ ] Code Tidy ups
