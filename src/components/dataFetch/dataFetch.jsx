@@ -100,7 +100,7 @@ const DataFetch = () => {
         >Prev</button>
         <input
           className='input'
-          maxlength="2"
+          maxLength="2"
           min="1"
           name="pageCount"
           onChange={(e) => {

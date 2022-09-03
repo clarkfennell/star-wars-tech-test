@@ -1,12 +1,20 @@
 # Frontend Test
 
+## SetUp Instructions
+1. Clone this repository
+2. cd into the /app directory
+3. Type the following command to install the dependencies and run the project
+````
+npm install && npm start
+````
+
 **​Your task is to create a user interface for lovers of the Star Wars movie franchise.**
 
 _You should use the People endpoint from the Star Wars API (https://swapi.dev/api/) for your data._
 
 ## Acceptance Criteria: ##
 
-##### The application should: #####
+##### :wrench: The application should: #####
 
 - [x] Fetch and display a list of characters
 - [x] Contain a "next" and "previous" button which when clicked will fetch the next and previous page of results respectively (the endpoint you use already supports pagination)
@@ -28,6 +36,6 @@ Please complete the task using React and/or NextJS
 
 
 ###### _Notes_ ######
-<ins>_If I had more time_</ins>
+###### <ins>_If I had more time_</ins> ######
 - I would've tested the pagination more thoroughly. I had to use an input text with a maxlength attribute to make sure it would not overflow if too much is typed into it.
 - I would have liked to have done some more styling inline with the movie franchise
