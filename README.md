@@ -2,7 +2,7 @@
 
 ## SetUp Instructions
 1. Clone this repository
-2. cd into the /app directory
+2. cd into the /star-wars-tech-test directory
 3. Type the following command to install the dependencies and run the project
 ````
 npm install && npm start
