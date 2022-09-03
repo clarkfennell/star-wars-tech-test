@@ -39,3 +39,4 @@ Please complete the task using React and/or NextJS
 ###### <ins>_If I had more time_</ins> ######
 - I would've tested the pagination more thoroughly. I had to use an input text with a maxlength attribute to make sure it would not overflow if too much is typed into it.
 - I would have liked to have done some more styling inline with the movie franchise
+- I would have liked to have added a numbering system, or looked at the layout for a better ordering when sorting the results
