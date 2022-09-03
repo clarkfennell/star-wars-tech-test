@@ -43,10 +43,18 @@ const DataFetch = () => {
 
     switch (sortType) {
       case 'massDEC':
-        newSortedResults = [...results].sort((a, b) => { return b.mass - a.mass })
+        newSortedResults = [...results].sort((a, b) => {
+          if (a.mass === 'unknown') return -1;
+          if (b.mass === 'unknown') return 1;
+          return b.mass.replace(/[^0-9]/g, '') - a.mass.replace(/[^0-9]/g, '');
+        })
         break;
       case 'massASC':
-        newSortedResults = [...results].sort((a, b) => { return a.mass - b.mass })
+        newSortedResults = [...results].sort((a, b) => {
+          if (a.mass === 'unknown') return 1;
+          if (b.mass === 'unknown') return -1;
+          return a.mass.replace(/[^0-9]/g, '') - b.mass.replace(/[^0-9]/g, '');
+        })
         break;
       default:
         return setSortedResults(newSortedResults)
@@ -54,6 +62,8 @@ const DataFetch = () => {
 
     return setSortedResults(newSortedResults);
   }, [results, sortType])
+
+  console.log(sortedResults)
 
   return (
     <div className='container'>
@@ -82,9 +92,12 @@ const DataFetch = () => {
         <input 
           type="number"
           name="pageCount"
-          placeholder={pageCount}
+          value={pageCount}
           min="1"
-          onChange={(e) => setCurrentPage(`https://swapi.dev/api/people/?page=` + e.target.value)}
+          onChange={(e) => {
+            setCurrentPage(`https://swapi.dev/api/people/?page=` + e.target.value);
+            setPageCount(e.target.value);
+          }}
         />
       </div>
 
