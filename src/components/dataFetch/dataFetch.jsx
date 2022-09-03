@@ -2,6 +2,8 @@ import { useEffect, useState, useContext } from 'react';
 import DataCard from '../dataCard/dataCard';
 import DataSortContext from './context/dataSortContext';
 
+import './styles.scss'
+
 const DataFetch = () => {
   const [apiData, setAPIData] = useState([]);
   const [results, setResults] = useState([]);
@@ -63,44 +65,8 @@ const DataFetch = () => {
     return setSortedResults(newSortedResults);
   }, [results, sortType])
 
-  console.log(sortedResults)
-
   return (
-    <div className='container'>
-      {sortedResults.map((res, index) => (
-        <DataCard key={index} data={res} />
-      ))}
-      
-      <div className="container_pagination">
-        <button
-          className="btn btn_pagination"
-          onClick={() => {
-            setCurrentPage(apiData.next);
-            (pageCount >= 1) ? setPageCount(pageCount + 1) : setPageCount(pageCount);
-          }}
-          disabled={!nextPage}
-        >Next</button>
-        <button
-          className="btn btn_pagination"
-          onClick={() => {
-            setCurrentPage(apiData.previous);
-            (pageCount > 1) ? setPageCount(pageCount - 1) : setPageCount(pageCount);
-          }}
-          disabled={!prevPage}
-        >Prev</button>
-
-        <input 
-          type="number"
-          name="pageCount"
-          value={pageCount}
-          min="1"
-          onChange={(e) => {
-            setCurrentPage(`https://swapi.dev/api/people/?page=` + e.target.value);
-            setPageCount(e.target.value);
-          }}
-        />
-      </div>
-
+    <div className="container">
       <div className="container_sort">
         <button 
         className="btn btn_sort"
@@ -115,7 +81,45 @@ const DataFetch = () => {
           onClick={() => setSortType('default')}
         >Default</button>
       </div>
+
+      <div className='container_results'>
+        {sortedResults.map((res, index) => (
+          <DataCard key={index} data={res} />
+        ))}
+      </div>
       
+      <div className="container_pagination">
+        
+        <button
+          className="btn btn_pagination"
+          onClick={() => {
+            setCurrentPage(apiData.previous);
+            (pageCount > 1) ? setPageCount(pageCount - 1) : setPageCount(pageCount);
+          }}
+          disabled={!prevPage}
+        >Prev</button>
+        <input
+          className='input'
+          maxlength="2"
+          min="1"
+          name="pageCount"
+          onChange={(e) => {
+            setCurrentPage(`https://swapi.dev/api/people/?page=` + e.target.value);
+            setPageCount(e.target.value);
+          }}
+          pattern="/d*"
+          type="text"
+          value={pageCount}
+        />
+        <button
+          className="btn btn_pagination"
+          onClick={() => {
+            setCurrentPage(apiData.next);
+            (pageCount >= 1) ? setPageCount(pageCount + 1) : setPageCount(pageCount);
+          }}
+          disabled={!nextPage}
+        >Next</button>
+      </div>
     </div>
   )
 }

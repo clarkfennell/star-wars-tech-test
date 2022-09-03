@@ -1,0 +1,30 @@
+.container {
+  display: grid; 
+  grid-template: {
+    columns: 1fr; 
+    rows: 0fr 1fr 0fr;
+    areas: 
+    "."
+    "."
+    ".";
+  }
+  gap: 0px 0px;
+
+  &_results,
+  &_pagination,
+  &_sort {
+    align-content: flex-start;
+    display: flex;
+    flex: {
+      direction: row;
+      wrap: wrap;
+    }
+    justify-content: center;
+    padding: {
+      bottom: .5rem;
+      left: 1rem;
+      right: 1rem;
+      top: .5rem;
+    }
+  }
+}

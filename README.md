@@ -22,6 +22,12 @@ Please complete the task using React and/or NextJS
 
 
 ###### _Personal Additions Once Task Are Complete_ ######
-- [ ] CSS styling (preferably with Sass)
-- [ ] Transition styling
-- [ ] Code Tidy ups
+- [x] CSS styling (preferably with Sass)
+- [x] Transition styling
+- [x] Code Tidy ups
+
+
+###### _Notes_ ######
+<ins>_If I had more time_</ins>
+- I would've tested the pagination more thoroughly. I had to use an input text with a maxlength attribute to make sure it would not overflow if too much is typed into it.
+- I would have liked to have done some more styling inline with the movie franchise

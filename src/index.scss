@@ -1,0 +1,156 @@
+/* Font Imports */
+@font-face {
+  font-family: 'Star Jedi';
+  src: url('./fonts/StarJedi/Starjedi.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+html,
+body {
+  background: {
+    color: #0f0b0d;
+  }
+  color: #d6dee7;
+  font: {
+    family: 'Roboto Condensed', sans-serif;
+    size: 16px;
+    weight: 400;
+  }
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 2.25rem;
+  margin: {
+    bottom: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 5rem;
+    margin: {
+      bottom: 2.25rem;
+    }
+  }
+}
+
+h2 {
+  line-height: 1.25rem;
+  margin: {
+    top: 0;
+    bottom: .75rem;
+  }
+}
+
+h1,
+h2 {
+  color: #FFE81F;
+  font: {
+    family: 'Star Jedi', sans-serif;
+  }
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  align-self: center;
+  appearance: none;
+  border: none;
+  border-radius: .5rem;
+  color: #fff;
+  cursor: pointer;
+  font: {
+    family: 'Star Jedi', sans-serif;
+    size: 1rem;
+  }
+  line-height: 1rem;
+  letter-spacing: 1px;
+  margin: {
+    bottom: .25rem;
+    left: .5rem;
+    right: .5rem;
+    top: .25rem;
+  }
+  padding: {
+    bottom: .25rem;
+    left: .5rem;
+    right: .5rem;
+    top: .25rem;
+  }
+  text-transform: lowercase;
+  
+  &_pagination {
+    background: {
+      color: #234DB8;
+    }
+    transition: background-color ease-in-out .4s;
+    
+    &:hover {
+      background: {
+        color: #EB212E;
+      }
+      transition: background-color ease-in-out .4s;
+    }
+  }
+  
+  &_sort {
+    background: {
+      color: #167A11;
+    }
+    
+    &:hover {
+      background: {
+        color: #663399;
+      }
+      transition: background-color ease-in-out .4s;
+    }
+  }
+}
+
+input {
+  appearance: none;
+  background: {
+    color: transparent;
+  }
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font: {
+    family: 'Star Jedi', sans-serif;
+    size: 3rem;
+    weight: bold;
+  }
+  max: {
+    width: 4rem;
+  }
+  padding: {
+    left: 0;
+  }
+  position: relative;
+  text-align: center;
+  top: -.5rem;
+  width: auto;
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+}

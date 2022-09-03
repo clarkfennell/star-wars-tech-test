@@ -1,0 +1,35 @@
+.App {
+  display: block;
+  margin: 0 auto;
+  max: {
+    width: 1440px;
+  }
+
+  &_title {
+    animation: {
+      name: crawl;
+      duration: 7s;
+      timing-function: ease-out;
+    }
+  }
+  
+  .wrapper {
+    opacity: 0;
+    transition: opacity ease-in-out .4s;
+  }
+}
+
+@keyframes crawl {
+  from {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+  to {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+}
