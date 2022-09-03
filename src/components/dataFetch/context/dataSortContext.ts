@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-export type DataSortType = 'default' | 'mass';
+export type DataSortType = 'default' | 'massASC' | 'massDEC';
 
 export type SortType = {
   sortType: DataSortType;

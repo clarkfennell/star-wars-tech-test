@@ -1,10 +1,13 @@
+import DataSortManager from "./components/dataFetch/context/dataSortContextManager";
 import DataFetch from "./components/dataFetch/dataFetch";
 
 const App = () => {
   return (
-    <div className="App">
-      <DataFetch />
-    </div>
+    <DataSortManager>
+      <div className="App">
+        <DataFetch />
+      </div>
+    </DataSortManager>
   );
 }
 
